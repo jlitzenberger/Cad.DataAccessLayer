@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A3368ED4-8E08-495C-B77C-57CD18C4FF63}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cad.DataAccessLayer</RootNamespace>
+    <AssemblyName>Cad.DataAccessLayer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Stage|AnyCPU'">
+    <OutputPath>bin\Stage\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WM.Common">
+      <HintPath>..\WM.Common\bin\Debug\WM.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Context\ALL_TAB_COLS.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\B07_STATUS.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\C02_ISR_DISPOS.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\C03_ASSIGN.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\C05_ISR_COMM_HEAD.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\C06_ISR_COMMENT.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\C07_ISR_ACTIVITY.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CadModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CadModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CadModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CadModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CadModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Context\CAD_PARAMETERS.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\D11_UNIT_ACTIVITY.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\D16_MEMB_ACTIVITY.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\DP_UNIT.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\EQUIPMENT.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\FILE_ATTACHMENT.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\FILE_DEFINITION.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\ISR.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\ISR_UDF.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PERSONNEL.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\PERSONNEL_SKILL.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\S02_SHIFT_DETAIL.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\S04_SCHED_PERS.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\S05_SCHED_EXCEPT.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\SCREEN2_DETAIL.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\SCREEN2_DETAIL_GRID.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\SCREEN2_DETAIL_GRID_COLUMN.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\SCREEN2_DETAIL_GRID_LANGUAGE.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\SCREEN2_FIELD_LANGUAGE.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\SCREEN2_HEADER.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\SERVICE_CODE.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\UDF_CONTAINER.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\UDF_CONTAINER_NODE.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\UDF_NODE_SCREEN_RELATION.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\VTB_CODE.cs">
+      <DependentUpon>CadModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\GenericDataRepository.cs" />
+    <Compile Include="Repositories\GenericSqlDataRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IGenericSqlDataRepository.cs" />
+    <Compile Include="Repositories\Interfaces\IVtbCodeRepository.cs" />
+    <Compile Include="Repositories\UnitOfWork.cs" />
+    <Compile Include="Repositories\VtbCodeRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Context\CadModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CadModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Debug.config">
+      <DependentUpon>App.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App.Release.config">
+      <DependentUpon>App.config</DependentUpon>
+    </None>
+    <None Include="App.Stage.config">
+      <DependentUpon>App.config</DependentUpon>
+    </None>
+    <None Include="App.Test.config">
+      <DependentUpon>App.config</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Context\CadModel.edmx.diagram">
+      <DependentUpon>CadModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Context\CadModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CadModel.Context.cs</LastGenOutput>
+      <DependentUpon>CadModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Context\CadModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CadModel.cs</LastGenOutput>
+      <DependentUpon>CadModel.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <UsingTask TaskName="TransformXml" AssemblyFile="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Web\Microsoft.Web.Publishing.Tasks.dll" />
+  <Target Name="AfterCompile" Condition="Exists('App.$(Configuration).config')">
+    <!--Generate transformed app config in the intermediate directory-->
+    <TransformXml Source="App.config" Destination="$(IntermediateOutputPath)$(TargetFileName).config" Transform="App.$(Configuration).config" />
+    <!--Force build process to use the transformed configuration file from now on.-->
+    <ItemGroup>
+      <AppConfigWithTargetPath Remove="App.config" />
+      <AppConfigWithTargetPath Include="$(IntermediateOutputPath)$(TargetFileName).config">
+        <TargetPath>$(TargetFileName).config</TargetPath>
+      </AppConfigWithTargetPath>
+    </ItemGroup>
+  </Target>
+  <!--Override After Publish to support ClickOnce AfterPublish. Target replaces the untransformed config file copied to the deployment directory with the transformed one.-->
+  <Target Name="AfterPublish">
+    <PropertyGroup>
+      <DeployedConfig>$(_DeploymentApplicationDir)$(TargetName)$(TargetExt).config$(_DeploymentFileMappingExtension)</DeployedConfig>
+    </PropertyGroup>
+    <!--Publish copies the untransformed App.config to deployment directory so overwrite it-->
+    <Copy Condition="Exists('$(DeployedConfig)')" SourceFiles="$(IntermediateOutputPath)$(TargetFileName).config" DestinationFiles="$(DeployedConfig)" />
+  </Target>
+</Project>
